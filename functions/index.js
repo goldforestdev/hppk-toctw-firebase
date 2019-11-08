@@ -17,15 +17,15 @@ exports.myFunction = functions.firestore
 	const noticeTitle = newValue.title;
 	const noticeBody = newValue.body;
   
-    console.log('notice title:', noticeTitle, ': body :', noticeBody);
+	console.log('notice title:', noticeTitle, ': body :', noticeBody);
   
-    // Notification details.
-    const payload = {
+	// Notification details.
+	const payload = {
 		notification: {
-            title: noticeTitle,
-            body: noticeBody
-        }
-    };
+			title: noticeTitle,
+			body: noticeBody
+		}
+	};
   
 	return admin.messaging().sendToTopic("latest_notice", payload);  
   
